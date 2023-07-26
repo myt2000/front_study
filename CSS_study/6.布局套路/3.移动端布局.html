@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>flex 布局</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .parent {
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 600px;
+        background: #ddd;
+      }
+
+      /* .child {
+        float: left; 
+         border: 1px solid red; 
+      } */
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .clearfix {
+        zoom: 1;
+      }
+      .child:nth-child(1) {
+        width: 100px;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        height: 36px;
+        line-height: 36px;
+        float: right;
+      }
+      /* .child:nth-child(2) {
+      } */
+      .content {
+        border: 1px solid block;
+        margin-right: 10px;
+      }
+      .nav {
+        line-height: 24px;
+        padding: 6px 0;
+      }
+      .navItem {
+        margin-left: 20px;
+      }
+      .banner {
+        width: 800px;
+        height: 400px;
+        background: #888;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+      }
+      @media (max-width: 420px) {
+        .banner {
+          width: auto;
+        }
+      }
+      .pictures {
+        width: 800px;
+        margin: 0 auto;
+
+        /* background: black; */
+      }
+      @media (max-width: 420px) {
+        .pictures {
+          width: auto;
+        }
+      }
+      .pictures > .xxx {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -4px;
+      }
+      .picture {
+        width: calc(25% - 8px);
+        height: 194px;
+        background: #ddd;
+        border: 1px solid red;
+        margin: 4px;
+      }
+      @media (max-width: 420px) {
+        .picture {
+          width: calc(50% -8px);
+        }
+      }
+      .art {
+        height: 300px;
+        background: #ddd;
+        width: 800px;
+        margin: 0 auto;
+      }
+      @media (max-width: 420px) {
+        .art {
+          width: auto;
+        }
+      }
+      .art > .sider {
+        float: left;
+        border: 1px solid black;
+        width: 33.33333333333%;
+      }
+      .art > .main {
+        float: left;
+        border: 1px solid black;
+        width: 66.66666666666%;
+        height: 300px;
+      }
+      @media (max-width: 420px) {
+        .art > .main {
+          width: auto;
+        }
+      }
+      .sider-child {
+        margin-right: 20px;
+        border: 1px solid black;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent clearfix">
+      <div class="child">logo</div>
+      <div class="child">
+        <div class="nav clearfix">
+          <div class="navItem">导航1</div>
+          <div class="navItem">导航2</div>
+          <div class="navItem">导航3</div>
+          <div class="navItem">导航4</div>
+          <div class="navItem">导航5</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner"></div>
+    <div class="pictures">
+      <div class="xxx">
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+      </div>
+      <div class="art clearfix">
+        <div class="sider">
+          <div class="sider-child">广告1</div>
+        </div>
+        <div class="main">
+          <div class="main-child">广告2</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

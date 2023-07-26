@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>img上传</title>
+    <style>
+      .imagePicker {
+        width: 120px;
+        height: 120px;
+        border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+        position: relative;
+        cursor: pointer;
+      }
+      .imagePicker img {
+        max-width: 100%;
+        max-width: 100%;
+        vertical-align: auto;
+      }
+      .imagePicker input[type="file"] {
+        position: absolute;
+        background: red;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+        cursor: pointer;
+      }
+      .imagePicker .mask {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid red;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+      }
+      .imagePicker:hover .mask {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="imagePicker">
+      <img
+        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fgss0.baidu.com%2F-vo3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fwh%253D450%252C600%2Fsign%3Dd1b27f29f81f3a295a9dddcaac159007%2F500fd9f9d72a605978cb3fed2034349b023bba6a.jpg&refer=http%3A%2F%2Fgss0.baidu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1660700429&t=b89283e703a26547e4b177c5d36d0b19"
+      />
+      <input id="imageInput" type="file" />
+      <div class="mask">编辑</div>
+    </div>
+  </body>
+  <script>
+    imageInput.onchange = function (e) {
+      //   let formData = new FormData();
+      //   formData.append("xxx", e.target.files[0]);
+      //   console.log(e.target.files[0]);
+      //   $.ajax({
+      //     url: "yyy",
+      //     data: formData,
+      //     processData: false,
+      //     contentType: false,
+      //     type: "POST",
+      //     // success: function (data) {
+      //     //   alert(data);
+      //     // }
+      //   });
+      e.target.value = "";
+    };
+  </script>
+</html>

@@ -1,0 +1,43 @@
+.pulse {
+  animation-name: inline-usqpz7l;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes inline-usqpz7l {
+  from {
+    background-color: yellow;
+  }
+  to {
+    background-color: red;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.child {
+  background: #ddd;
+}
+
+body {
+  font-size: 16px;
+}
+
+.child {
+  width: 5 rem;
+  height: 2.5 rem;
+  float: left;
+  border: 1px solid red;
+  margin: 0.625 rem 0.625 rem;
+  font-size: 1.2rem;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */

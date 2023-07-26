@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>美化input</title>
+    <link rel="stylesheet" href="./iconfont.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      ol {
+        list-style: none;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        border: 1px solid red;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrapper {
+        /* border: 1px solid green; */
+        display: flex;
+        position: relative;
+      }
+      .suggestion {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+      }
+      .suggestion:active {
+        display: block;
+      }
+      .floatdiv {
+        position: absolute;
+        /* border: 1px solid red; */
+        right: 0;
+        top: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: center;
+        margin: 10px;
+        color: #b8b8b8;
+      }
+      .inputwrapper {
+        position: relative;
+        display: inline-block;
+      }
+      .inputwrapper {
+        float: left;
+      }
+      .inputwrapper + button {
+        border: none;
+        font-size: 14px;
+        color: white;
+        background-color: #3988f8;
+        padding: 0 20px;
+      }
+      .inputwrapper input[type="text"] {
+        border: 1px solid #b8b8b8;
+        width: 540px;
+        height: 35px;
+        padding-left: 8px;
+        font-size: 15px;
+      }
+      .inputwrapper + button:focus {
+        outline: none;
+      }
+      .inputwrapper + button:hover {
+        box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
+      }
+      .inputwrapper input[type="text"]:focus {
+        outline: none;
+        border: 1px solid #4b94fc;
+      }
+      .inputwrapper .iconfont {
+        width: 20px;
+        height: 20px;
+        /* font-size: 20px; */
+      }
+      .splitline {
+        width: 0;
+        height: 16px;
+        border-left: 1px solid;
+        margin: 0 10px;
+      }
+      .inputwrapper .iconfont:hover {
+        fill: #4b94fc;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <span class="inputwrapper">
+        <input type="text" id="keyword" autocomplete="off" />
+        <span class="floatdiv">
+          <span class="iconfont">&#xe863;</span>
+          <span class="splitline"></span>
+          <span class="iconfont">&#xe667;</span>
+        </span>
+      </span>
+      <button>百度一下</button>
+      <ul class="suggestion">
+        <li>选项1</li>
+        <li>选项2</li>
+        <li>选项3</li>
+        <li>选项4</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    keyword.oninput = function (e) {
+      let value = keyword.value;
+      if (value) {
+        suggestion.classList.add("active");
+      } else {
+        suggestion.classList.remove("active");
+      }
+    };
+  </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .baba {
+        background: red;
+        /* 添加border后，child元素依然被包住*/
+        border-top: 10px solid blue;
+      }
+      .child {
+        height: 100px;
+        background: rgba(0, 255, 0, 1);
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="baba">
+      <div class="erzi"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex PC 页面布局</title>
+    <style>
+      header {
+        height: 50px;
+        background: #ddd;
+      }
+      footer {
+        height: 50px;
+        background: #ddd;
+      }
+      .content {
+        display: flex;
+      }
+      .content > aside {
+        width: 120px;
+        background: #444;
+        order: 1;
+      }
+      .content > main {
+        height: 400px;
+        flex: 1;
+        order: 2;
+        background: red;
+      }
+      .content > nav {
+        width: 100px;
+        background: green;
+        order: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <div class="content">
+      <aside id="aside1"></aside>
+      <main></main>
+      <nav></nav>
+    </div>
+    <footer></footer>
+  </body>
+</html>

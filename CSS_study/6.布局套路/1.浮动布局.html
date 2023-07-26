@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>布局1</title>
+    <style>
+      .parent {
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 600px;
+        background: #ddd;
+      }
+
+      .child {
+        /* float: left; */
+        /* border: 1px solid red; */
+      }
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .clearfix {
+        zoom: 1;
+      }
+      .child:nth-child(1) {
+        width: 100px;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        height: 36px;
+        line-height: 36px;
+      }
+      .child:nth-child(2) {
+      }
+      .content {
+        border: 1px solid block;
+        margin-right: 10px;
+      }
+      .nav {
+        line-height: 24px;
+        padding: 6px 0;
+      }
+      .navItem {
+        margin-left: 20px;
+      }
+      .banner {
+        width: 800px;
+        height: 400px;
+        background: #888;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+      }
+      .pictures {
+        width: 800px;
+        margin: 0 auto;
+        /* background: black; */
+      }
+      .picture {
+        width: 194px;
+        height: 194px;
+        background: #ddd;
+        margin: 4px;
+        float: left;
+      }
+      .picture:nth-child(4n + 1) {
+        margin-left: 0;
+      }
+      .picture:nth-child(4n) {
+        margin-right: 0;
+      }
+      .pictures > xxx {
+        /* 为什么不能只用两层div */
+        /* background: rgba(255, 0, 0, 0.8); */
+        margin-left: -4px;
+        margin-right: -4px; /* margin 扩大了4像素*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent clearfix">
+      <div class="child" style="float: left">logo</div>
+      <div class="child" style="float: right">
+        <div class="nav clearfix">
+          <div class="navItem" style="float: right">导航1</div>
+          <div class="navItem" style="float: right">导航2</div>
+          <div class="navItem" style="float: right">导航3</div>
+          <div class="navItem" style="float: right">导航4</div>
+          <div class="navItem" style="float: right">导航5</div>
+        </div>
+      </div>
+    </div>
+    <div class="banner"></div>
+    <div class="pictures">
+      <div class="xxx clearfix">
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+        <div class="picture"></div>
+      </div>
+    </div>
+  </body>
+</html>

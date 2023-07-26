@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.block element height</title>
+    <style>
+      div {
+        border: 1px solid green;
+        font-size: 20px;
+        font-family: Tahoma;
+      }
+      span {
+        border: 1px solid red;
+        display: inline-block;
+        width: 5em;
+        text-align: justify;
+        line-height: 20px;
+        overflow: hidden;
+        height: 20px;
+      }
+      span::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <span>姓名</span> <br />
+      <span>联系方式</span>
+    </div>
+  </body>
+</html>

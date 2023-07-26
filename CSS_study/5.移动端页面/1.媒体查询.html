@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>移动页面demo</title>
+    <!-- link需要添加media -->
+    <link rel="stylesheet" href="style.css" media="(max-width:520px)" />
+    <style>
+      /* 页面到800px，页面背景变红*/
+
+      @media (max-width: 769px) {
+        body {
+          background: purple;
+        }
+      }
+
+      @media (min-width: 321px) and (max-width: 768px) {
+        body {
+          background: blue;
+        }
+      }
+
+      @media (min-width: 350px) and (max-width: 425px) {
+        body {
+          background: green;
+        }
+      }
+      @media (min-width: 370px) and (max-width: 375px) {
+        body {
+          background: orange;
+        }
+      }
+      @media (max-width: 320px) {
+        /* 0-320 */
+        body {
+          background: red;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
